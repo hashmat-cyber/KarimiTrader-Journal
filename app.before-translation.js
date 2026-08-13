@@ -470,36 +470,6 @@ async function loadDashboard() {
                 stats.total_profit_loss
             );
 
-        const performanceWins =
-            document.getElementById("performanceWins");
-
-        const performanceLosses =
-            document.getElementById("performanceLosses");
-
-        const performanceRate =
-            document.getElementById("performanceRate");
-
-        const winrateProgress =
-            document.getElementById("winrateProgress");
-
-        if (performanceWins) {
-            performanceWins.textContent = stats.wins;
-        }
-
-        if (performanceLosses) {
-            performanceLosses.textContent = stats.losses;
-        }
-
-        if (performanceRate) {
-            performanceRate.textContent =
-                `${stats.win_rate}%`;
-        }
-
-        if (winrateProgress) {
-            winrateProgress.style.width =
-                `${Math.min(Math.max(Number(stats.win_rate) || 0, 0), 100)}%`;
-        }
-
 
         const recent =
             document.getElementById(

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal - KarimiTrader.Journal</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+    <header class="dashboard-header">
+        <a href="/dashboard.html" class="brand">
+    <img src="/logo.png" alt="Karimi Trader Logo" class="brand-logo">
+    <span>KarimiTrader<span>-Journal</span></span>
+</a>
+
+        <nav>
+            <a href="/dashboard.html">Dashboard</a>
+            <a href="/new-trade.html">New Trade</a>
+            <a href="/trades.html" class="active">Journal</a>
+            <button id="logoutBtn" class="logout-btn">Logout</button>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <div class="page-heading">
+            <div>
+                <p class="eyebrow">TRADING JOURNAL</p>
+                <h1>My Trades</h1>
+                <p>All your recorded trades.</p>
+            </div>
+
+            <a href="/new-trade.html" class="btn">+ New Trade</a>
+        </div>
+
+        <div class="filter-bar">
+            <input type="text" id="tradeSearch" placeholder="Search symbol...">
+
+            <select id="resultFilter">
+                <option value="">All Results</option>
+                <option value="Win">Wins</option>
+                <option value="Loss">Losses</option>
+                <option value="Breakeven">Breakeven</option>
+            </select>
+        </div>
+
+        <div id="tradesContainer" class="trade-list">
+            <div class="empty-state">Loading trades...</div>
+        </div>
+
+    </main>
+
+    <script src="/app.js"></script>
+</body>
+</html>

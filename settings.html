@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - KarimiTrader.Journal</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+    <header class="dashboard-header">
+        <a href="/dashboard.html" class="brand">
+    <img src="/logo.png" alt="Karimi Trader Logo" class="brand-logo">
+    <span>KarimiTrader<span>-Journal</span></span>
+</a>
+
+        <nav>
+            <a href="/dashboard.html">Dashboard</a>
+            <a href="/new-trade.html">New Trade</a>
+            <a href="/trades.html">Journal</a>
+            <button id="logoutBtn" class="logout-btn">Logout</button>
+        </nav>
+    </header>
+
+    <main class="container narrow">
+
+        <div class="page-heading">
+            <div>
+                <p class="eyebrow">ACCOUNT</p>
+                <h1>Settings</h1>
+                <p>Your account information.</p>
+            </div>
+        </div>
+
+        <div class="settings-card">
+            <div class="profile-row">
+                <span>Username</span>
+                <strong id="settingsUsername">-</strong>
+            </div>
+
+            <div class="profile-row">
+                <span>Email</span>
+                <strong id="settingsEmail">-</strong>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="/app.js"></script>
+</body>
+</html>

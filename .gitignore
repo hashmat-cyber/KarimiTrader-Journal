@@ -6,3 +6,5 @@ __pycache__/
 .vscode/
 uploads/*
 !uploads/.gitkeep
+
+KarimiTrader-Journal.zip

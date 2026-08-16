@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        New Trade - KarimiTrader.Journal
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="/styles.css"
+    >
+</head>
+
+<body>
+
+    <header class="dashboard-header">
+
+        <div class="brand">
+            <img src="/logo.png" alt="Karimi Trader Logo" class="brand-logo">
+            <span>KarimiTrader<span>-Journal</span></span>
+        </div>
+
+        <nav>
+<a href="/dashboard.html">
+                Dashboard
+            </a>
+
+            <a
+                href="/new-trade.html"
+                class="active">
+                New Trade
+            </a>
+
+            <a href="/trades.html">
+                Journal
+            </a>
+
+            <button
+                id="logoutBtn"
+                class="logout-btn">
+                Logout
+            </button>
+        </nav>
+
+    </header>
+
+
+    <main class="container narrow">
+
+        <div class="page-heading">
+
+            <div>
+
+                <p class="eyebrow">
+                    JOURNAL
+                </p>
+
+                <h1>
+                    New Trade
+                </h1>
+
+                <p>
+                    Record the details of your trade.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <form
+            id="tradeForm"
+            class="trade-form"
+            enctype="multipart/form-data"
+        >
+
+            <!-- TRADE INFORMATION -->
+
+            <div class="form-section">
+
+                <h2>
+                    Trade Information
+                </h2>
+
+                <div class="form-grid">
+
+                    <div>
+
+                        <label>
+                            Date
+                        </label>
+
+                        <input
+                            type="datetime-local"
+                            name="trade_date"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label>
+                            Symbol
+                        </label>
+
+                        <input
+                            type="text"
+                            name="symbol"
+                            placeholder="XAUUSD"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label>
+                            Direction
+                        </label>
+
+                        <select
+                            name="direction"
+                            required
+                        >
+
+                            <option value="">
+                                Select
+                            </option>
+
+                            <option value="Buy">
+                                Buy
+                            </option>
+
+                            <option value="Sell">
+                                Sell
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <label>
+                            Lot Size
+                        </label>
+
+                        <input
+                            type="number"
+                            step="0.01"
+                            name="lot_size"
+                            placeholder="0.01"
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label>
+                            Entry Price
+                        </label>
+
+                        <input
+                            type="number"
+                            step="any"
+                            name="entry_price"
+                            placeholder="0.00"
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label>
+                            Stop Loss
+                        </label>
+
+                        <input
+                            type="number"
+                            step="any"
+                            name="stop_loss"
+                            placeholder="0.00"
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label>
+                            Take Profit
+                        </label>
+
+                        <input
+                            type="number"
+                            step="any"
+                            name="take_profit"
+                            placeholder="0.00"
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label>
+                            Profit / Loss ($)
+                        </label>
+
+                        <input
+                            type="number"
+                            step="0.01"
+                            name="profit_loss"
+                            placeholder="0.00"
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label>
+                            Result
+                        </label>
+
+                        <select
+                            name="result"
+                            required
+                        >
+
+                            <option value="">
+                                Select
+                            </option>
+
+                            <option value="Win">
+                                Win
+                            </option>
+
+                            <option value="Loss">
+                                Loss
+                            </option>
+
+                            <option value="Breakeven">
+                                Breakeven
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <label>
+                            Strategy / Setup
+                        </label>
+
+                        <input
+                            type="text"
+                            name="strategy"
+                            placeholder="SMC, ICT, Price Action..."
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TRADE REVIEW -->
+
+            <div class="form-section">
+
+                <h2>
+                    Trade Review
+                </h2>
+
+
+                <label>
+                    Why did you enter?
+                </label>
+
+                <textarea
+                    name="entry_reason"
+                    placeholder="Write the reason for your entry..."
+                ></textarea>
+
+
+                <label>
+                    Emotion
+                </label>
+
+                <input
+                    type="text"
+                    name="emotion"
+                    placeholder="Calm, confident, fearful, FOMO..."
+                >
+
+
+                <label>
+                    What mistakes did you make?
+                </label>
+
+                <textarea
+                    name="mistakes"
+                    placeholder="Write any mistakes..."
+                ></textarea>
+
+
+                <label>
+                    What did you learn?
+                </label>
+
+                <textarea
+                    name="lesson"
+                    placeholder="Write what you learned from this trade..."
+                ></textarea>
+
+            </div>
+
+
+            <!-- SCREENSHOTS -->
+
+            <div class="form-section">
+
+                <h2>
+                    Trade Screenshots
+                </h2>
+
+                <p class="hint">
+                    Upload two chart screenshots:
+                    one before entering the trade and
+                    one after the trade was completed.
+                </p>
+
+
+                <label>
+                    Before Trade
+                </label>
+
+                <input
+                    type="file"
+                    name="before_screenshot"
+                    accept=".png,.jpg,.jpeg,.webp"
+                >
+
+                <p class="hint">
+                    Chart before entering the trade.
+                </p>
+
+
+                <label>
+                    After Trade
+                </label>
+
+                <input
+                    type="file"
+                    name="after_screenshot"
+                    accept=".png,.jpg,.jpeg,.webp"
+                >
+
+                <p class="hint">
+                    Chart after closing the trade.
+                </p>
+
+
+                <p class="hint">
+                    PNG, JPG, JPEG or WEBP.
+                    Maximum total upload size: 10MB.
+                </p>
+
+            </div>
+
+
+            <div
+                id="tradeMessage"
+                class="message"
+            ></div>
+
+
+            <button
+                type="submit"
+                class="btn full-width">
+                Save Trade
+            </button>
+
+        </form>
+
+    </main>
+
+
+        <script src="/app.js"></script>
+
+</body>
+</html>

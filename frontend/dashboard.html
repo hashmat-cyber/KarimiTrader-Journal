@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - KarimiTrader.Journal</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+
+<header class="dashboard-header">
+
+    <a href="/dashboard.html" class="brand">
+        <img src="/logo.png" alt="Karimi Trader Logo" class="brand-logo">
+        <span>KarimiTrader<span>-Journal</span></span>
+    </a>
+
+    <nav>
+        <a href="/dashboard.html" class="active">Dashboard</a>
+        <a href="/new-trade.html">New Trade</a>
+        <a href="/trades.html">Journal</a>
+        <button id="logoutBtn" class="logout-btn">Logout</button>
+    </nav>
+
+</header>
+
+<main class="container">
+
+    <div class="page-heading">
+
+        <div>
+            <p class="eyebrow">YOUR JOURNAL</p>
+
+            <h1>Trading Dashboard</h1>
+
+            <p id="welcomeText">
+                Welcome back.
+            </p>
+        </div>
+
+        <a href="/new-trade.html" class="btn">
+            + New Trade
+        </a>
+
+    </div>
+
+
+    <!-- MAIN STATISTICS -->
+
+    <section class="stats-grid">
+
+        <div class="stat-card">
+            <span>Total Trades</span>
+            <strong id="totalTrades">0</strong>
+        </div>
+
+        <div class="stat-card">
+            <span>Wins</span>
+            <strong id="wins">0</strong>
+        </div>
+
+        <div class="stat-card">
+            <span>Losses</span>
+            <strong id="losses">0</strong>
+        </div>
+
+        <div class="stat-card">
+            <span>Win Rate</span>
+            <strong id="winRate">0%</strong>
+        </div>
+
+        <div class="stat-card">
+            <span>Total P/L</span>
+            <strong id="totalProfit">$0.00</strong>
+        </div>
+
+    </section>
+
+
+    <!-- PERFORMANCE -->
+
+    <section class="dashboard-section">
+
+        <div class="section-heading">
+
+            <h2>Recent Trades</h2>
+
+            <a href="/trades.html">
+                View all
+            </a>
+
+        </div>
+
+        <div
+            id="recentTrades"
+            class="trade-list"
+        >
+
+            <div class="empty-state">
+                No trades recorded yet.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUICK ACTIONS -->
+
+    <section class="dashboard-section">
+
+        <div class="section-heading">
+            <h2>Quick Actions</h2>
+        </div>
+
+        <div class="quick-actions">
+
+            <a
+                href="/new-trade.html"
+                class="quick-action"
+            >
+                <strong>＋</strong>
+                <span>
+                    <b>New Trade</b>
+                    <small>Record a new trade</small>
+                </span>
+            </a>
+
+            <a
+                href="/trades.html"
+                class="quick-action"
+            >
+                <strong>▣</strong>
+                <span>
+                    <b>Trading Journal</b>
+                    <small>View all your trades</small>
+                </span>
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="/app.js"></script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const updatePerformance = () => {
+
+        const wins =
+            Number(
+                document.getElementById("wins")?.textContent || 0
+            );
+
+        const losses =
+            Number(
+                document.getElementById("losses")?.textContent || 0
+            );
+
+        const rate =
+            Number(
+                String(
+                    document.getElementById("winRate")?.textContent || "0"
+                ).replace("%", "")
+            );
+
+        const performanceWins =
+            document.getElementById("performanceWins");
+
+        const performanceLosses =
+            document.getElementById("performanceLosses");
+
+        const performanceRate =
+            document.getElementById("performanceRate");
+
+        const progress =
+            document.getElementById("winrateProgress");
+
+        if (performanceWins) {
+            performanceWins.textContent = wins;
+        }
+
+        if (performanceLosses) {
+            performanceLosses.textContent = losses;
+        }
+
+        if (performanceRate) {
+            performanceRate.textContent = `${rate}%`;
+        }
+
+        if (progress) {
+            progress.style.width =
+                `${Math.min(Math.max(rate, 0), 100)}%`;
+        }
+    };
+
+    updatePerformance();
+
+    setTimeout(updatePerformance, 500);
+    setTimeout(updatePerformance, 1000);
+
+});
+
+</script>
+
+</body>
+</html>

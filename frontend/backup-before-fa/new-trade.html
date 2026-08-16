@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        New Trade - KarimiTrader.Journal
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="/styles.css"
+    >
+</head>
+
+<body>
+
+    <header class="dashboard-header">
+
+        <div class="brand">
+            <img src="/logo.png" alt="Karimi Trader Logo" class="brand-logo">
+            <span>KarimiTrader<span>-Journal</span></span>
+        </div>
+
+        <nav>
+            <button id="languageBtn" class="language-btn">فارسی</button>
+            <a href="/dashboard.html" data-i18n="dashboard">
+                Dashboard
+            </a>
+
+            <a
+                href="/new-trade.html"
+                class="active"
+                data-i18n="newTrade">
+                New Trade
+            </a>
+
+            <a href="/trades.html" data-i18n="journal">
+                Journal
+            </a>
+
+            <button
+                id="logoutBtn"
+                class="logout-btn"
+                data-i18n="logout">
+                Logout
+            </button>
+        </nav>
+
+    </header>
+
+
+    <main class="container narrow">
+
+        <div class="page-heading">
+
+            <div>
+
+                <p class="eyebrow">
+                    JOURNAL
+                </p>
+
+                <h1>
+                    New Trade
+                </h1>
+
+                <p>
+                    Record the details of your trade.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <form
+            id="tradeForm"
+            class="trade-form"
+            enctype="multipart/form-data"
+        >
+
+            <!-- TRADE INFORMATION -->
+
+            <div class="form-section">
+
+                <h2 data-i18n="tradeInformation">
+                    Trade Information
+                </h2>
+
+                <div class="form-grid">
+
+                    <div>
+
+                        <label data-i18n="date">
+                            Date
+                        </label>
+
+                        <input
+                            type="datetime-local"
+                            name="trade_date"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label data-i18n="symbol">
+                            Symbol
+                        </label>
+
+                        <input
+                            type="text"
+                            name="symbol"
+                            placeholder="XAUUSD"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label data-i18n="direction">
+                            Direction
+                        </label>
+
+                        <select
+                            name="direction"
+                            required
+                        >
+
+                            <option value="" data-i18n="select">
+                                Select
+                            </option>
+
+                            <option value="Buy" data-i18n="buy">
+                                Buy
+                            </option>
+
+                            <option value="Sell" data-i18n="sell">
+                                Sell
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <label data-i18n="lotSize">
+                            Lot Size
+                        </label>
+
+                        <input
+                            type="number"
+                            step="0.01"
+                            name="lot_size"
+                            placeholder="0.01"
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label data-i18n="entryPrice">
+                            Entry Price
+                        </label>
+
+                        <input
+                            type="number"
+                            step="any"
+                            name="entry_price"
+                            placeholder="0.00"
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label data-i18n="stopLoss">
+                            Stop Loss
+                        </label>
+
+                        <input
+                            type="number"
+                            step="any"
+                            name="stop_loss"
+                            placeholder="0.00"
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label data-i18n="takeProfit">
+                            Take Profit
+                        </label>
+
+                        <input
+                            type="number"
+                            step="any"
+                            name="take_profit"
+                            placeholder="0.00"
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label data-i18n="profitLoss">
+                            Profit / Loss ($)
+                        </label>
+
+                        <input
+                            type="number"
+                            step="0.01"
+                            name="profit_loss"
+                            placeholder="0.00"
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label data-i18n="result">
+                            Result
+                        </label>
+
+                        <select
+                            name="result"
+                            required
+                        >
+
+                            <option value="">
+                                Select
+                            </option>
+
+                            <option value="Win" data-i18n="win">
+                                Win
+                            </option>
+
+                            <option value="Loss" data-i18n="loss">
+                                Loss
+                            </option>
+
+                            <option value="Breakeven" data-i18n="breakeven">
+                                Breakeven
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <label data-i18n="strategy">
+                            Strategy / Setup
+                        </label>
+
+                        <input
+                            type="text"
+                            name="strategy"
+                            placeholder="SMC, ICT, Price Action..."
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TRADE REVIEW -->
+
+            <div class="form-section">
+
+                <h2 data-i18n="tradeReview">
+                    Trade Review
+                </h2>
+
+
+                <label data-i18n="whyEnter">
+                    Why did you enter?
+                </label>
+
+                <textarea
+                    name="entry_reason"
+                    placeholder="Write the reason for your entry..."
+                ></textarea>
+
+
+                <label data-i18n="emotion">
+                    Emotion
+                </label>
+
+                <input
+                    type="text"
+                    name="emotion"
+                    placeholder="Calm, confident, fearful, FOMO..."
+                >
+
+
+                <label data-i18n="mistakes">
+                    What mistakes did you make?
+                </label>
+
+                <textarea
+                    name="mistakes"
+                    placeholder="Write any mistakes..."
+                ></textarea>
+
+
+                <label data-i18n="lesson">
+                    What did you learn?
+                </label>
+
+                <textarea
+                    name="lesson"
+                    placeholder="Write what you learned from this trade..."
+                ></textarea>
+
+            </div>
+
+
+            <!-- SCREENSHOTS -->
+
+            <div class="form-section">
+
+                <h2 data-i18n="screenshots">
+                    Trade Screenshots
+                </h2>
+
+                <p class="hint">
+                    Upload two chart screenshots:
+                    one before entering the trade and
+                    one after the trade was completed.
+                </p>
+
+
+                <label data-i18n="beforeTrade">
+                    Before Trade
+                </label>
+
+                <input
+                    type="file"
+                    name="before_screenshot"
+                    accept=".png,.jpg,.jpeg,.webp"
+                >
+
+                <p class="hint">
+                    Chart before entering the trade.
+                </p>
+
+
+                <label data-i18n="afterTrade">
+                    After Trade
+                </label>
+
+                <input
+                    type="file"
+                    name="after_screenshot"
+                    accept=".png,.jpg,.jpeg,.webp"
+                >
+
+                <p class="hint">
+                    Chart after closing the trade.
+                </p>
+
+
+                <p class="hint">
+                    PNG, JPG, JPEG or WEBP.
+                    Maximum total upload size: 10MB.
+                </p>
+
+            </div>
+
+
+            <div
+                id="tradeMessage"
+                class="message"
+            ></div>
+
+
+            <button
+                type="submit"
+                class="btn full-width"
+                data-i18n="saveTrade">
+                Save Trade
+            </button>
+
+        </form>
+
+    </main>
+
+
+    <script src="/translations.js"></script>
+    <script src="/app.js"></script>
+
+</body>
+</html>
